@@ -28,7 +28,7 @@
 #
 
 ### !!! PASTE YOUR UIN AND PASSWORD HERE !!! ###
-_uin = 1111111   # must be int (number)
+_uin = 111111 # must be int (number)
 _password = 'password' # must be string
 
 
@@ -90,7 +90,7 @@ class pycq:
       for (x,y) in pycq_instance.A.__dict__.items():
         setattr(self, x, y) 
       self.command=cmd
-      self.my_uin = _uin
+      self.my_uin = pycq_instance.my_uin
       self.udp_session = pycq_instance.udp_session
       self.seq1 = pycq_instance.udp_seq1
       self.seq2 = pycq_instance.udp_seq2
@@ -270,7 +270,7 @@ class pycq:
     self.my_ip=socket.inet_aton(socket.gethostbyname(socket.gethostname()))
     self.my_ip=(ord(self.my_ip[0])<<24)+(ord(self.my_ip[1])<<16)+(ord(self.my_ip[2])<<8)+(ord(self.my_ip[3]))
     self.UDP_waiting_for_ack={}
-    self.keep_alive_timer=timer(100)
+    self.keep_alive_timer=timer(10)
 
   def login(self,my_uin=0,password='',status=0,wait_for_result=0,use_tcp=0,auto_relogin=1):
     if my_uin: self.my_uin=my_uin
