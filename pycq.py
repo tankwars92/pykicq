@@ -464,7 +464,7 @@ if __name__=='__main__':
         p_message_text = p[0]['message_text']
 
         if p_message_text == "!test":
-          c.send_message_server(p_uin, 'Hi. This is the pycq library, corrected to work with the OSCAR "KICQ" server. Random number (1-100): ' + str(random.randint(1, 100)) + " :D. Send !logout message to logout gracefully.")
+          c.send_message_server(p_uin, 'Hi. This is the pycqlibrary, corrected to work with the OSCAR "KICQ" server. Random number (1-100): ' + str(random.randint(1, 100)) + " :D. Send !logout message to logout gracefully. Russian message test: \xcf\xf0\xe8\xe2\xe5\xf2.")
         elif p_message_text == "!logout":
           c.send_message_server(p_uin, "Goodbye!")
           c.logout()
