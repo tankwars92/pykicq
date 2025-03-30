@@ -16,9 +16,8 @@ while True:
     if p and isinstance(p, list) and len(p) > 0 and isinstance(p[0], dict):
         if 'uin' in p[0] and 'message_text' in p[0]:
             if p[0]['message_text'] == "!logout":
-                c.send_message_server(3739186, "Goodbye!")
+                c.send_message_server(p[0]['uin'], "Goodbye!")
                 c.logout()
-                save_data()
                 break
             else:
-                handle_message(p[0]['uin'], p[0]['message_text'])
+                c.send_message_server(p[0]['uin'], p[0]['message_text'])
